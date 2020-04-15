@@ -52,4 +52,32 @@ class SimpleAlgorithmTest {
         assertEquals(process.getTo(), 20);
         assertEquals(process.getSize(), 6);
     }
+
+    @Test
+    void process3() {
+        SimpleAlgorithm algorithm = new SimpleAlgorithm();
+        HashSet<Integer> data = new HashSet<Integer>() {{
+            add(1);
+            add(2);
+            add(3);
+            add(5);
+            add(7);
+            add(9);
+            add(10);
+            add(11);
+            add(12);
+            add(13);
+            add(15);
+            add(16);
+            add(17);
+            add(18);
+            add(19);
+        }};
+        Range process = algorithm.process(data);
+
+        assertNotNull(process);
+        assertEquals(process.getFrom(), 9);
+        assertEquals(process.getTo(), 13);
+        assertEquals(process.getSize(), 5);
+    }
 }
